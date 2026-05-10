@@ -10,13 +10,13 @@ from dotenv import load_dotenv     # To load our .env file safely
 
 # Load the .env file so GROQ_API_KEY becomes available as an environment variable
 # Without this line, os.environ.get() would return None
+# load_dotenv() reads .env file locally
+# On Hugging Face, the secret is already in environment — load_dotenv() is harmless there
 load_dotenv()
 
-# Initialize the Groq client using the API key from .env
-# This is like logging into the Groq service — done once at startup
-client = Groq(
-    api_key=os.environ.get("GROQ_API_KEY")
-)
+api_key = os.environ.get("GROQ_API_KEY")
+
+client = Groq(api_key=api_key)
 
 # This is the system prompt — the secret instruction that gives Groq its personality
 # It tells Groq WHO it is, WHAT it does, and HOW it should behave
