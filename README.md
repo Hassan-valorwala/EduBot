@@ -1,3 +1,11 @@
+---
+title: EduBot
+emoji: 🎓
+colorFrom: pink
+colorTo: white
+sdk: docker
+pinned: false
+---
 # 🎓 EduBot — College FAQ Chatbot
 
 A hybrid NLP-powered chatbot that answers college-related questions intelligently.
