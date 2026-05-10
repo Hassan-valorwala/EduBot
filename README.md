@@ -2,7 +2,7 @@
 title: EduBot
 emoji: 🎓
 colorFrom: pink
-colorTo: white
+colorTo: pink
 sdk: docker
 pinned: false
 ---
