@@ -70,8 +70,7 @@ def chat():
 
 
 if __name__ == '__main__':
-    # debug=True means:
-    # 1. Auto-restarts server when you save code changes
-    # 2. Shows detailed error messages in browser
-    # NEVER use debug=True in production — only during development
-    app.run(debug=True)
+    # debug=False in production — never expose debug mode publicly
+    # host='0.0.0.0' means accept connections from anywhere (required for Docker)
+    # port=7860 is Hugging Face's default port for Spaces
+    app.run(host='0.0.0.0', port=7860, debug=False)
