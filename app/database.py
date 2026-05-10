@@ -111,3 +111,16 @@ def update_faq(faq_id, category, question, answer):
 
     conn.commit()
     conn.close()
+def get_all_faqs_as_list():
+    """
+    Returns all FAQs as a list of dictionaries.
+    Regular get_all_faqs() returns sqlite3.Row objects.
+    This version returns plain dicts — easier to work with everywhere.
+    """
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM faqs')
+    rows = cursor.fetchall()
+    conn.close()
+    # Convert each sqlite3.Row to a plain dictionary
+    return [dict(row) for row in rows]    

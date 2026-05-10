@@ -1,0 +1,15 @@
+# Virtual environment — thousands of files, never push these
+venv/
+
+# Secret keys — NEVER push this
+.env
+
+# Database — will be recreated from code
+data/edubot.db
+
+# Python cache files — auto-generated, not needed
+__pycache__/
+*.pyc
+
+# VS Code settings — personal preference files
+.vscode/
